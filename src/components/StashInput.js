@@ -45,8 +45,8 @@ class StashInput extends Component{
   
     render() {
       return (
-        <form onSubmit = {this.handleSubmit} >
-        <span > Add Your Contact Form ! < /span><br / >
+        <form onSubmit = {this.handleSubmit}>
+        <span > Add Your Contact Form ! </span><br />
              <input type = "text"
                name = "first_name"
                pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
@@ -73,15 +73,14 @@ class StashInput extends Component{
                id = "urlList"
                onChange = {this.handleFormChange}
                pattern="https://.*"
-               placeholder = "Add your avatar with an url - https://example.com"  />
+               placeholder = "Add your avatar with an url - https://example.com"/>
   
         <input type = "submit"
                value = "Add Contact" / >
-        {this.state.isSuccessful && < Redirect to = "/dashboard" / >}
-        < /form>
+        {this.state.isSuccessful && < Redirect to = "/dashboard"/>}
+        </form>
       );
     }
   }
   
   export default FlightInfo;
-}
