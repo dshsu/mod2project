@@ -1,6 +1,15 @@
 import React, {Component} from 'react';
 import Login from '/login.js';
 
+export default function StashInput(){
+  const [yarnNum, setYarnNum] = useState({});
+    const handleChange = ({ target}) =>{
+      const{name, value} = target;
+    }
+  const [yarnColor,setYarnColor] = useState({});
+  const [yarnWeight, setYarnWeight] = useState({});
+  const [yarnFiber, setYarnFiber] = useState({});
+}
 class StashInput extends Component{
     state = {
         registerContact: {
