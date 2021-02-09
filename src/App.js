@@ -3,7 +3,7 @@ import Login from './components/Login';
 import Registration from './components/Register';
 import StashInput from './components/StashInput';
 import NavBar from './components/NavBar';
-import './App.css'
+import './index.css'
 
 class App extends Component {
   render() {
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;

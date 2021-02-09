@@ -57,11 +57,6 @@ class Registration extends Component {
       </form>
       <input type="submit" value="Cancel" onClick={this.handleClick}/>
       {this.state.isCancel && <Redirect to="/login"/>}
-      <p>Please use User Name: "admin" && Password: "1234" during the registration as SERVER IS DOWN!! :((
-      </p>
-      <p>You will be redirected to Log In page
-      </p>
-
     </Wrapper>);
   }
 }

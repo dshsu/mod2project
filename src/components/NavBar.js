@@ -6,5 +6,10 @@ class NavBar extends Component{
     of the site and direct the user to areas of the app.
     it should consist of buttons that, when clicked, will direct the user to other
     components*/
-
+    render(){
+        return(
+            <h1>Yet Another Knitting App is Here!</h1>
+        );
+    }
 }
+export default NavBar;
