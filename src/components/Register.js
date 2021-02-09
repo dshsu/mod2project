@@ -1,16 +1,5 @@
 import React, {Component} from 'react';
-import styled from "styled-components";
 import {Redirect} from "react-router-dom";
-
-/*Notes about this Component--
-1. The new packages that were used are styled-components (for styling) and "Redirect" from react-router-dom library.
-2. Rendering a <Redirect> will navigate to a new location. The new location will override the current location in the
-   history stack. The state object can be accessed via this.props.location.state in the redirected-to component.
-3. handleFormChange -- this method takes the user inputs and store them in state.
-4. handleSubmit -- this method is used when the user clicks submit button.
-5. render funcion renders the form and route the page accordingly using <Redirect>
-6. Const Wrapper is used for styling as mentioned in step 1. */
-
 class Registration extends Component {
   state = {
     registerParams: {

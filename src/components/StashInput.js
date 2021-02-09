@@ -1,49 +1,47 @@
 import React, {Component} from 'react';
 import Login from '/login.js';
-
+//this is the bulk of the app - it adds the input yarn into the stash.
 export default function StashInput(){
   const [yarnNum, setYarnNum] = useState({});
     const handleChange = ({ target}) =>{
       const{name, value} = target;
     }
-  const [yarnColor,setYarnColor] = useState({});
-  const [yarnWeight, setYarnWeight] = useState({});
-  const [yarnFiber, setYarnFiber] = useState({});
+  const [color,setYarnColor] = useState({});
+  const [weight, setYarnWeight] = useState({});
+  const [fiber, setYarnFiber] = useState({});
 }
 class StashInput extends Component{
     state = {
-        registerContact: {
-        first_name: "",
-        email_id: ""
+        yarnType: {
+        color: "",
+        weight: "",
+        fiber:"",
+        count=0
       }
     };
   
     handleFormChange = event => {
-      let registerNewContact = {...this.state.registerContact};
-      console.log("number of data we currently have ", this.state.registerContact.length);
-      console.log("Add new contact", registerNewContact);
+      let inputYarn = {...this.state.yarnType};
+      console.log("number of data we currently have ", this.state.yarnType.length);
+      console.log("Add new yarn to stash", inputYarn);
       let val = event.target.value;
-      console.log("event.targe.value is in add contact page: ", val);
-      registerNewContact[event.target.name] = val;
+      console.log("event.target.value is in add to stash: ", val);
+      inputYarn[event.target.name] = val;
       this.setState({
-        registerContact: registerNewContact
+        yarnType: inputYarn
       });
     };
   
     handleSubmit = event => {
-      console.log("Adding contact");
-      var len = store.getState().length;
-      console.log("length of state array from store is", len);
-      /*since i don't have an id for new user entered in UI i am using the length of the array and incrementing it for id.
-      This id will be used as a key when displaying in UI.
-      **Here we are updating the store with user input data using store.dispatch*/
+      console.log("Adding to Stash");
+      
       store.dispatch({
-      type: "Add_Contact",
+      type: "Add Yarn",
       payload:{
-      Name:this.state.registerContact.first_name,
-      Avatar:this.state.registerContact.avatar,
-      Email: this.state.registerContact.email_id,
-      Id:++len
+      Color:this.state.yarnType.color,
+      Weight:this.state.yarnType.weight,
+      Fiber: this.state.yarnType.fiber,
+      Quantity: this.state.yarnType.count,
     }
   })
       this.setState({
@@ -55,37 +53,37 @@ class StashInput extends Component{
     render() {
       return (
         <form onSubmit = {this.handleSubmit}>
-        <span > Add Your Contact Form ! </span><br />
+        <span > Enter your stash here: </span><br />
              <input type = "text"
-               name = "first_name"
+               name = "color"
                pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
-               title="Only Characters"
+               title="Color"
                onChange = {this.handleFormChange}
-               placeholder = "First name" required />
+               placeholder = "Yarn Color" required />
              <span className="asterisk_input">  </span>
              <input type = "text"
-               name = "last_name"
+               name = "weight"
                pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
-               title="Only Characters"
+               title="Yarn Weight (Bulky, DK, Lace, etc)"
                onChange = {this.handleFormChange}
-               placeholder = "Last name" required />
+               placeholder = "Yarn Weight" required />
                <span className="asterisk_input">  </span>
              <input type = "text"
-               name = "email_id"
+               name = "fiber"
                pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-               title="Only valid email address"
+               title="Fiber Content"
                onChange = {this.handleFormChange}
-               placeholder = "Email Address" required />
+               placeholder = "Yarn Fiber" required />
                <span className="asterisk_input">  </span>
-             <input type = "url"
-               name = "avatar"
-               id = "urlList"
+               <input type = "number"
+               name = "count"
+               pattern="####"
+               title="Only a number"
                onChange = {this.handleFormChange}
-               pattern="https://.*"
-               placeholder = "Add your avatar with an url - https://example.com"/>
+               placeholder = "How many skeins" required />
   
         <input type = "submit"
-               value = "Add Contact" / >
+               value = "Add Yarn" / >
         {this.state.isSuccessful && < Redirect to = "/dashboard"/>}
         </form>
       );
