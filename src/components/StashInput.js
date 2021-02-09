@@ -92,4 +92,4 @@ class StashInput extends Component{
     }
   }
   
-  export default FlightInfo;
+  export default Stashinput;
