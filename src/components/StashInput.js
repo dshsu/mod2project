@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Login from '/login.js';
 //this is the bulk of the app - it adds the input yarn into the stash.
 export default function StashInput(){
   const [yarnNum, setYarnNum] = useState({});
@@ -10,13 +9,13 @@ export default function StashInput(){
   const [weight, setYarnWeight] = useState({});
   const [fiber, setYarnFiber] = useState({});
 }
-class StashInput extends Component{
+class YarnInput extends Component{
     state = {
         yarnType: {
         color: "",
         weight: "",
         fiber:"",
-        count=0
+        count
       }
     };
   
@@ -56,28 +55,24 @@ class StashInput extends Component{
         <span > Enter your stash here: </span><br />
              <input type = "text"
                name = "color"
-               pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
                title="Color"
                onChange = {this.handleFormChange}
                placeholder = "Yarn Color" required />
-             <span className="asterisk_input">  </span>
+             
              <input type = "text"
                name = "weight"
-               pattern="[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
                title="Yarn Weight (Bulky, DK, Lace, etc)"
                onChange = {this.handleFormChange}
                placeholder = "Yarn Weight" required />
                <span className="asterisk_input">  </span>
              <input type = "text"
                name = "fiber"
-               pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
                title="Fiber Content"
                onChange = {this.handleFormChange}
                placeholder = "Yarn Fiber" required />
-               <span className="asterisk_input">  </span>
+              
                <input type = "number"
                name = "count"
-               pattern="####"
                title="Only a number"
                onChange = {this.handleFormChange}
                placeholder = "How many skeins" required />
@@ -89,5 +84,3 @@ class StashInput extends Component{
       );
     }
   }
-  
-  export default Stashinput;
